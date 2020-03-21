@@ -1,10 +1,8 @@
-#Existing data for retrieving relevant posts
+## Old
 p1_gender = "F"
 p1_occasion = "Event"
 p1_type = "Selfie"
 p1_studyflex = "Yes"
-
-#Existing data for output
 p1_language = "English"
 p1_length = 3
 p1_emojis = 2
@@ -13,13 +11,10 @@ p1_likes = 274
 p1_comments = 17
 
 p1 = {
-  #for input
   "gender" : F,
   "occasion" : "Event",
   "type" : "Selfie",
   "studyflex" = Y,
-  
-  #for output
   "language" : "English",
   "length" : 3,
   "emojis" : 2,
@@ -28,12 +23,30 @@ p1 = {
   "comments" : 17
 }
 
-#User inputs
+## New 
+import csv 
+with open ('dataset.csv', 'r') as csv_file:
+  csv_reader = csv.DictReader(csv_file) 
+
+  #for line in csv_reader:
+  #  print(line)
+
+import pandas as pd
+
+data = pd.read_csv("dataset.csv")
+print(data)
+
 input_gender = input("Please choose your gender (F/M): ")
 input_occasion = input("Please specify the occasion (Event/Graduation/Lifestyle/Landscape): ")
 input_type = input("Please specify the the of pictures to analyze (Selfie/Taken by someone else): ")
 input_studyflex = input("Please specify whether study flex should be apparent in the posts (Yes/No): ")
 
+for row in data["Gender"]:
+	if "Gender" == input_gender:
+    ## now what? :D
+
+
+## Old again
 if (input_gender == p1["gender"] and input_occasion == p1["occasion"] and input_type == p1["type"] and input_studyflex == p1["studyflex"]):
   print("The captions of pictures that fit your description are usually in the", p1["language"], "language")
   print("Have a length of ", p1["length"], "words")
