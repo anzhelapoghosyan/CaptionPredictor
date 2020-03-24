@@ -24,25 +24,21 @@ p1 = {
 }
 
 ## New 
-import csv 
-with open ('dataset.csv', 'r') as csv_file:
-  csv_reader = csv.DictReader(csv_file) 
-
-  #for line in csv_reader:
-  #  print(line)
-
-import pandas as pd
-
-data = pd.read_csv("dataset.csv")
-print(data)
+import csv
 
 input_gender = input("Please choose your gender (F/M): ")
+
+with open ('dataset.csv', 'r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+
+    for item in csv_reader:
+        if (item["Gender"] == input_gender):
+            print(item["Likes"], ":", item["Type"], ":", item["Comments"])
+
 input_occasion = input("Please specify the occasion (Event/Graduation/Lifestyle/Landscape): ")
 input_type = input("Please specify the the of pictures to analyze (Selfie/Taken by someone else): ")
 input_studyflex = input("Please specify whether study flex should be apparent in the posts (Yes/No): ")
 
-for row in data["Gender"]:
-	if "Gender" == input_gender:
     ## now what? :D
 
 
