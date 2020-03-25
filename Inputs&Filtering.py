@@ -35,4 +35,5 @@ with open ('dataset.csv', 'r') as csv_file:
 		if (item["Study Flex"] == input_studyflex):
 			filter_data["match_studyflex"].append(item)
 
-print(filter_data["match_studyflex"])
+data = filter_data["match_studyflex"]
+print(data)
