@@ -59,11 +59,8 @@ if len(data)>0:
 				if (item["Language"] == "Rus"):
 					numOfRus = numOfRus +1
 				else:
-					if (item["Language"] == "Arm"):
-						numOfArm = numOfArm +1
-					else:
-						if (item["Language"] == "Other"):
-							numOfOther = numOfOther +1
+					if (item["Language"] == "Other"):
+						numOfOther = numOfOther +1
 
 	for item in data:
 		sumOfLength = sumOfLength + float(item["Length"])
