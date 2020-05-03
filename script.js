@@ -62,19 +62,54 @@ function showResults() {
 		for (i = 0 ; i < data.length; i++){
 			if (data[i]["Language"] == "Eng"){
 				numOfEng = numOfEng + 1
-			}else{
-				if (data[i]["Language"] == "Arm"){
-					numOfArm = numOfArm +1
-				}else{
-					if (data[i]["Language"] == "Rus"){
-						numOfRus = numOfRus +1
-					}else{
-						if (data[i]["Language"] == "Other"){
-							numOfOther = numOfOther +1
-						}
+			} else {
+					if (data[i]["Language"] == "Arm"){
+						numOfArm = numOfArm +1
+					} else {
+							if (data[i]["Language"] == "Rus"){
+								numOfRus = numOfRus +1
+							} else {
+									if (data[i]["Language"] == "Other"){
+										numOfOther = numOfOther +1
+									}
+							}
+					}
+			}
 		}
 
 
+			// the reference here is probably wrong too?
+
+		for (i = 0 ; i < data.length ; i++){
+			sumOfLength = sumOfLength + float(data[i]["Length"])
+		}
+		for (i = 0 ; i < data.length ; i++){
+			sumOfEmojis = sumOfEmojis + float(data[i]["# of emojis"])
+		}
+		for (i = 0 ; i < data.length ; i++){
+			sumOfHashtags = sumOfHashtags + float(data[i]["# of hashtags"])
+		}
+		for (i = 0 ; i < data.length ; i++){
+			sumOfLikes = sumOfLikes + float(data[i]["Likes"])
+		}
+		for (i = 0 ; i < data.length ; i++){
+			sumOfComments = sumOfComments + float(data[i]["Comments"])
+		}
+		for (i = 0 ; i < data.length ; i++){
+			sumOfFollowers = sumOfFollowers + float(data[i]["Followers"])
+		}
+
+		var percentOfArm = numOfArm/data.length*100
+		var percentOfEng = numOfEng/data.length*100
+		var percentOfRus = numOfRus/data.length*100
+		var percentOfOther = numOfOther/data.length*100
+
+		var avgLength = sumOfLength/data.length
+		var avgEmojis = sumOfEmojis/data.length
+		var avgHashtags = sumOfHashtags/data.length
+		var avgLikes = sumOfLikes/data.length
+		var avgComments = sumOfComments/data.length
+		var avgFollowers = sumOfFollowers/data.length
 
 
 
